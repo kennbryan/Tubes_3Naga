@@ -1,61 +1,108 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Platform Pemesanan Ruang Kelas dan Meeting - Telkom University
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Kontributor
 
-## About Laravel
+### 1. Ferdiansyah Adi Saputra
+- **NIM**: 102022330113
+- **Username GitHub**: [ferdayyaye](https://github.com/ferdayyaye)
+- **Peran**: Fitur Utama yang Dikerjakan: Login dan Registrasi, Dashboard Utama, Edit Profile 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### Kesesuaian antara Desain dan Implementasi
+- **Deskripsi**: Implementasi seluruh fitur dilakukan sesuai dengan desain awal yang tertuang dalam use case dan ERD. Tabel `users`, `bookings`, serta logika `role-based access control` telah dibuat dan dihubungkan dengan baik sesuai diagram kelas.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Semua fitur yang saya kerjakan telah sesuai 100% dengan desain awal, baik dari sisi struktur data maupun alur penggunaan.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#### Kualitas Fitur CRUD (Fungsi dan Validasi)
+- **Deskripsi**:
+  - **Create**: Registrasi pengguna dan pembuatan riwayat pemesanan otomatis saat pemesanan dilakukan.
+  - **Read**: Tampilan data pengguna dan riwayat pemesanan masing-masing.
+  - **Update**: Edit profil, pembatalan pemesanan oleh user.
+  - **Delete**: Penghapusan akun (admin) atau pemesanan (user).
+  - **View** meliputi form login, registrasi, halaman profil, dan riwayat pemesanan.
+  - **Validasi**: Server-side validasi aktif untuk semua form penting, termasuk format email, password, dan input waktu pembatalan.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Fitur CRUD berjalan sempurna, seluruh validasi diterapkan, dan tidak ditemukan error dalam pengujian.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Implementasi API (Route, Controller, JSON Response)
+- **Deskripsi**:
+  - **Endpoint**: `/api/users`, `/api/users/{id}`, `/api/bookings/history`
+  - Menggunakan controller untuk generate JSON response dengan format.
+  - Validasi pada input ID dan autentikasi JWT atau session-based login diterapkan.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Semua endpoint berjalan dengan baik, aman, dan sesuai prinsip RESTful API.
 
-## Learning Laravel
+#### Git & Kolaborasi Tim
+- **Deskripsi**: Komitmen dilakukan secara rutin dengan deskripsi jelas, terutama di branch `feature/auth` dan `feature/user-management`. Estimasi jumlah commit > 10.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Commit saya menunjukkan progres fitur secara jelas, terstruktur, dan konsisten dalam kolaborasi tim.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 2. Syarief Saleh Madhy
+- **NIM**: 102022300201
+- **Username GitHub**: [Syarief10](https://github.com/Syarief10)
+- **Peran**: Fitur Utama yang Dikerjakan: Manajemen Jadwal Ruangan, Pemilihan & Pemesanan Ruang, Pencarian Ruang.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Kesesuaian antara Desain dan Implementasi
+- **Deskripsi**: Seluruh fitur telah diimplementasikan sesuai dengan use case dan class diagram yang ditetapkan, terutama penggunaan filter pencarian dan integrasi dengan jadwal.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Implementasi fitur sesuai dengan rancangan desain, termasuk pencegahan bentrokan jadwal.
 
-## Laravel Sponsors
+#### Kualitas Fitur CRUD (Fungsi dan Validasi)
+- **Deskripsi**:
+  - **Create**: Pemesanan ruang oleh user.
+  - **Read**: Menampilkan ruang berdasarkan filter.
+  - **Update**: Perubahan waktu pemesanan.
+  - **Delete**: Penghapusan pemesanan (jika batal).
+  - **Validasi** mencakup ketersediaan ruang dan waktu yang tidak bentrok.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Semua fungsi CRUD berjalan dengan baik, sistem validasi berhasil mencegah konflik jadwal, dan pengujian tidak menemukan bug.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#### Implementasi API (Route, Controller, JSON Response)
+- **Deskripsi**:
+  - **Endpoint**: `/api/rooms`, `/api/rooms/{id}`, `/api/bookings/available`
+  - JSON response dinamis berdasarkan filter pencarian ruang.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Endpoint dapat diakses, responsif, dan telah divalidasi input filter (kapasitas, waktu, fasilitas).
 
-### Premium Partners
+#### Git & Kolaborasi Tim
+- **Deskripsi**: Aktif di branch `feature/booking-management`, total >10 commit dengan deskripsi progres yang jelas.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Kontribusi saya konsisten dan seluruh hasil pekerjaan tercermin dalam riwayat commit.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+### 3. Kenneth Bryan
+- **NIM**: 102022330093
+- **Username GitHub**: [kennbryan](https://github.com/kennbryan)
+- **Peran**: Fitur Utama yang Dikerjakan: Verifikasi & Persetujuan Pemesanan, Pembatalan Ruangan, Manajemen Data Ruang.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Kesesuaian antara Desain dan Implementasi
+- **Deskripsi**: Implementasi fitur admin sesuai dengan rancangan awal, termasuk pembagian hak akses untuk memverifikasi dan menolak pemesanan. Struktur tabel ruang dan notifikasi sesuai dengan ERD.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Semua fitur berjalan sesuai desain dengan logika otorisasi admin yang tepat.
 
-## Code of Conduct
+#### Kualitas Fitur CRUD (Fungsi dan Validasi)
+- **Deskripsi**:
+  - **Create**: Tambah data ruang dan notifikasi.
+  - **Read**: Daftar ruang dan notifikasi status pemesanan.
+  - **Update**: Persetujuan pemesanan.
+  - **Delete**: Hapus ruang jika tidak digunakan lagi.
+  - Validasi dilakukan pada pengisian kapasitas, deskripsi, dan ID relasi.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Semua fitur CRUD berjalan baik dan validasi berhasil mencegah kesalahan input.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### Implementasi API (Route, Controller, JSON Response)
+- **Deskripsi**: Endpoint untuk Pembatalan dan Histori Pesanan (`GET /api/pembatalan`, `GET /api/book`, `GET /api/jadwal`, dll.), dengan otorisasi pada level controller.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: API telah tersedia, dapat diakses, dan menerapkan praktik REST yang aman.
 
-## Security Vulnerabilities
+#### Git & Kolaborasi Tim
+- **Deskripsi**: Total kontribusi saya terdiri dari 11 commit yang mencerminkan alur kerja yang sistematis.
+- **Penilaian Diri**: A (86–100)
+- **Justifikasi**: Seluruh riwayat dan detail pengerjaan dapat diverifikasi secara transparan melalui repositori GitHub.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Penjelasan Proyek
+Tugas ini bertujuan merancang dan mengembangkan platform pemesanan ruang kelas dan ruang meeting berbasis website di Telkom University sebagai solusi atas sistem manual yang tidak efisien. Proses pemesanan yang dilakukan melalui email atau tatap muka sering menimbulkan bentrokan jadwal dan pemanfaatan ruang yang tidak optimal. Platform yang dikembangkan akan menyediakan fitur pencarian dan filter ruang, tampilan jadwal ketersediaan, dan notifikasi status pemesanan. Sistem juga akan menerapkan validasi jadwal otomatis untuk mencegah bentrokan. Platform ini akan melayani dua jenis pengguna: pengguna umum (mahasiswa, dosen, staf) yang dapat memesan dan memantau status, serta administrator yang memverifikasi permintaan dan mengelola jadwal melalui dasbor terpadu.
